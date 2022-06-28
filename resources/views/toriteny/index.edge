@@ -1,0 +1,37 @@
+@layout('layout')
+
+@section('body')
+  <div class="container">
+    <h1>Liste des articles </h1>
+
+    <div class="mb-3">
+      <a href="{{route('toriteny.create')}}" class="btn btn-primary">Créer un article</a>
+    </div>
+    <main role="mail">
+      <ul class="list-group md-3">
+        @each(toriteny in toritenies)
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between align-item-center">
+              <a href="{{ route('toriteny.edit', {id: toriteny.id})}}" >
+                {{ toriteny.title }}
+              </a>
+              <form action="{{route('toriteny.edit', {id: toriteny.id})}}?_method=DELETE" method="post">
+                <button class="btn btn-danger">Supprimer</button>
+              </form>
+            </div>
+          </li>
+        @endeach
+      </ul>
+    </main>
+
+    <nav>
+      <ul class="pagination">
+        @each(anchor in toritenies.getUrlsForRange(1, toritenies.lastPage))
+          <li class="page-item">
+            <a href="{{anchor.url}}" class="page-link">{{anchor.page}}</a>
+          </li>
+        @endeach
+      </ul>
+    </nav>
+  </div>
+@end

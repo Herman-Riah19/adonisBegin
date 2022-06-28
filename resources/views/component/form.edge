@@ -1,0 +1,47 @@
+<form action="" method="post" enctype="multipart/formdata">
+   <div class="row mb-3">
+        <div class="col">
+            @!component('component/input', {
+                label: "Titre du toriteny",
+                name: "title",
+                value: toriteny.title
+            })
+        </div>
+        <div class="col">
+            @!component('component/input', {
+                label: "Categories",
+                name: "categorieId",
+                value: toriteny.categorieId,
+                options: categories.reduce((acc, categorie) => ({...acc, [categorie.id]:categorie.name}),{})
+            })
+        </div>
+   </div>
+   
+   <div class="mb-3">
+        @!component('component/input', {
+            label: "Description du toriteny",
+            name: "description",
+            value: toriteny.description,
+            type: "textarea"
+        })
+   </div>
+   <div class="mb-3">
+        @!component('component/input', {
+            label: 'Jacket',
+            name: 'thumbnail_file',
+            type: 'file'
+        })
+   </div>
+
+   <div>
+        <input
+            {{toriteny.online ? "checked":""}}
+            type="checkbox"
+            name="online"
+            class="form-check-input"
+            id="online" />
+        <label for="online" class="check-label">En lign?</label>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Enregistrer</button>
+</form>
