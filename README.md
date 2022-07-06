@@ -5,7 +5,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
+- [All About Adonis](#about_adonis)
 
 ## About <a name = "about"></a>
 
@@ -75,6 +75,6 @@ cd build
 node server.js
 ```
 
-# All about of Adonis Framework
+# All about of Adonis Framework <a name="about_adonis"> </a>
 
 following this link: [Adonis.com](https://docs.adonisjs.com)
