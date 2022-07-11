@@ -66,7 +66,7 @@ const bodyParserConfig: BodyParserConfig = {
     */
     convertEmptyStringsToNull: true,
 
-    types: ['application/x-www-form-urlencoded'],
+    types: ['multipart/form-data'],
   },
 
   /*
